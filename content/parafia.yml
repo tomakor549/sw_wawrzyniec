@@ -1,0 +1,103 @@
+name: Parafia św. Wawrzyńca
+shortName: św. Wawrzyniec
+patron: św. Wawrzyniec, diakon i męczennik
+feastDay: 10 sierpnia
+erected: 2 marca 2014
+diocese: Archidiecezja Katowicka
+deanery: Dekanat Wodzisław Śląski
+motto: Ci ubodzy są skarbem Kościoła.
+
+contact:
+  name: Parafia pw. św. Wawrzyńca
+  addressLines:
+    - ul. św. Wawrzyńca 39
+    - 44-304 Wodzisław Śląski
+    - Wilchwy
+  phone: "32 307 06 60"
+  mobile: "506 981 764"
+  email: wilchwy.wawrzyniec@archidiecezjakatowicka.pl
+  bankAccount: 98 1240 1330 1111 0010 3915 5527
+  mapUrl: https://www.openstreetmap.org/?mlat=49.973333&mlon=18.503333#map=17/49.97333/18.50333
+
+clergy:
+  - role: Proboszcz
+    name: ks. Stanisław Czempka
+    phone: "506 981 764"
+    email: stanislaw.czempka@katowicka.pl
+
+office:
+  summary: Kancelaria parafialna
+  items:
+    - poniedziałek — po porannej Mszy św.
+    - czwartek — po wieczornej Mszy św. do godz. 19:30
+
+masses:
+  - label: Niedziela i święta
+    times: ["8:00", "10:00", "14:00", "15:30"]
+    note: Aktualny porządek tygodnia zawsze w intencjach mszalnych.
+  - label: Poniedziałek, środa
+    times: ["7:00"]
+  - label: Wtorek, czwartek, piątek, sobota
+    times: ["18:00"]
+    note: W okresie zimowym Msza wieczorna o godz. 17:00.
+
+confessions: Sakrament pokuty i pojednania — 15 minut przed Mszą św. oraz w I piątki miesiąca.
+
+groups:
+  - name: Dzieci Maryi
+    description: Formacja dziewcząt przy parafii, nabożeństwa maryjne i służba liturgiczna.
+    meeting: Sobota, godz. 10:00
+  - name: Ministranci
+    description: Chłopcy służący przy ołtarzu. Nowy rok formacyjny rozpoczyna się Mszą szkolną w I czwartek.
+    meeting: I czwartek miesiąca, godz. 18:00
+  - name: Schola
+    description: Śpiew liturgiczny dzieci i młodzieży.
+    meeting: Sobota, godz. 11:00
+  - name: Apostolstwo Dobrej Śmierci
+    description: Modlitwa o szczęśliwą godzinę śmierci i posługa chorym. Po Mszy — sakrament namaszczenia.
+    meeting: I środa miesiąca, po Mszy porannej
+  - name: Domowy Kościół
+    description: Gałąź Ruchu Światło-Życie dla małżeństw i rodzin.
+  - name: Grupa pielgrzymkowa
+    description: Wspólne pielgrzymki parafialne, m.in. do Piekar Śląskich, Pszowa i Turzy.
+  - name: Chór parafialny
+    description: Śpiew podczas uroczystości i świąt parafialnych.
+
+devotions:
+  - name: Różaniec święty
+    when: w każdą niedzielę o godz. 7:30, przed Mszą o 8:00
+  - name: Koronka do Bożego Miłosierdzia
+    when: w piątek o godz. 15:00
+  - name: Wystawienie Najświętszego Sakramentu
+    when: w piątek o godz. 17:00
+  - name: Nabożeństwo do Serca Pana Jezusa
+    when: w I piątek miesiąca, po Mszy wieczornej
+  - name: Adoracja do godz. 24:00
+    when: w ostatni piątek miesiąca
+  - name: Katecheza dla dorosłych
+    when: w I czwartek miesiąca
+  - name: Apel Jasnogórski
+    when: w II niedzielę miesiąca
+  - name: Dzień Fatimski
+    when: 13. dnia miesiąca, od maja do października
+  - name: Katecheza przedchrzcielna
+    when: w I sobotę miesiąca po Mszy wieczornej
+  - name: Nabożeństwo do Matki Bożej Nieustającej Pomocy
+    when: w środę po Mszy porannej
+
+construction:
+  title: Budujemy kościół
+  summary: Przy kaplicy na Wilchwach trwa budowa świątyni pw. św. Wawrzyńca. Kolekty i ofiary na konto parafialne przeznaczane są m.in. na posadzkę i wykończenie wnętrza.
+  accountNote: Tytuł przelewu — „Na budowę kościoła”.
+
+links:
+  - label: Archidiecezja Katowicka
+    href: https://www.archidiecezjakatowicka.pl/
+  - label: Caritas Katowice
+    href: https://katowice.caritas.pl/
+  - label: Jasna Góra
+    href: https://www.jasnagora.pl/
+  - label: Sanktuarium Bożego Miłosierdzia
+    href: https://www.milosierdzie.pl/
+  - label: Apostolstwo Dobrej Śmierci
+    href: http://www.apostolstwo.pl/

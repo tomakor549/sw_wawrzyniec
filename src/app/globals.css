@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+  background-image:
+    radial-gradient(1200px 500px at 10% -10%, rgba(201, 162, 39, 0.08), transparent 50%),
+    radial-gradient(900px 400px at 100% 0%, rgba(142, 59, 50, 0.07), transparent 45%);
+}
+
+::selection {
+  background: rgba(201, 162, 39, 0.35);
+}
+
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-gold focus:px-4 focus:py-2 focus:text-ink focus:shadow-card;
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a227 20%, #e8d48b 50%, #c9a227 80%, transparent);
+}
+
+.prose-liturgy {
+  @apply text-[1.05rem] leading-relaxed text-ink/90;
+}
+
+.prose-liturgy h2,
+.prose-liturgy h3 {
+  @apply font-serif text-wine mt-8 mb-3;
+}
+
+.prose-liturgy h2 {
+  @apply text-3xl;
+}
+
+.prose-liturgy h3 {
+  @apply text-2xl;
+}
+
+.prose-liturgy p {
+  @apply mb-4;
+}
+
+.prose-liturgy ul,
+.prose-liturgy ol {
+  @apply mb-4 pl-5;
+}
+
+.prose-liturgy ul {
+  @apply list-disc;
+}
+
+.prose-liturgy ol {
+  @apply list-decimal;
+}
+
+.prose-liturgy li {
+  @apply mb-1;
+}
+
+.prose-liturgy a {
+  @apply text-brick underline decoration-gold/70 underline-offset-4 hover:text-wine;
+}
+
+.prose-liturgy strong {
+  @apply font-semibold text-wine;
+}
+
+.prose-liturgy img {
+  @apply my-6 max-w-full rounded-sm shadow-card;
+}
+
+.prose-liturgy table {
+  @apply mb-6 w-full text-left text-[0.95rem];
+}
+
+.prose-liturgy th,
+.prose-liturgy td {
+  @apply border-b border-sand/60 py-2 pr-3 align-top;
+}
+
+.prose-liturgy blockquote {
+  @apply my-6 border-l-2 border-gold pl-4 italic text-stone;
+}
