@@ -44,6 +44,8 @@ cover: 01.jpg
 
 Zdjęcia: JPG, PNG, WEBP. Można też utworzyć album i wrzucić pliki w `/admin`.
 
+Na **GitHub Pages** nie ma panelu `/admin` z wgrywaniem. Dodajesz pliki w git i po `git push` strona sama się przebudowuje.
+
 ## Dane stałe parafii
 
 Msze, telefony, konto, grupy — plik `parafia.yml`.

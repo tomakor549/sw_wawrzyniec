@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { HtmlContent } from "@/components/HtmlContent";
 import { PageHero } from "@/components/PageHero";
-import { getArticleBySlug } from "@/lib/articles";
+import { getArticleBySlug, listArticles } from "@/lib/articles";
 import { formatPlDate } from "@/lib/slug";
 
 export const dynamic = "force-dynamic";
 
 type Params = { slug: string };
+
+export async function generateStaticParams() {
+  const articles = await listArticles("intencje");
+  return articles.map((article) => ({ slug: article.slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;

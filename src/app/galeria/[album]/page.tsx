@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Lightbox } from "@/components/Lightbox";
 import { PageHero } from "@/components/PageHero";
-import { getAlbum } from "@/lib/gallery";
+import { getAlbum, listAlbums } from "@/lib/gallery";
 import { formatPlDate } from "@/lib/slug";
 
 export const dynamic = "force-dynamic";
 
 type Params = { album: string };
+
+export async function generateStaticParams() {
+  const albums = await listAlbums();
+  return albums.map((album) => ({ album: album.slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { album: slug } = await params;

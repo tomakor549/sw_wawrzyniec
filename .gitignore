@@ -8,4 +8,5 @@ dist
 .DS_Store
 content/.generated
 public/uploads
+public/media
 tsconfig.tsbuildinfo

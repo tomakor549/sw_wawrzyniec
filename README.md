@@ -38,6 +38,68 @@ docker compose up --build
 
 Folder `content/` jest montowany jako wolumen — wgrane ogłoszenia i zdjęcia zostają.
 
+## GitHub Pages
+
+GitHub Pages serwuje tylko pliki statyczne (bez Node i bez panelu wgrywania). Po każdym `git push` Actions buduje HTML z folderu `content/`.
+
+### 1. Repozytorium
+
+```bash
+cd ~/repo/sw_wawrzyniec
+git init
+git add .
+git commit -m "Strona parafii św. Wawrzyńca"
+git branch -M main
+gh repo create sw_wawrzyniec --public --source=. --remote=origin --push
+```
+
+Albo stwórz puste repo na GitHubie i:
+
+```bash
+git init
+git add .
+git commit -m "Strona parafii św. Wawrzyńca"
+git branch -M main
+git remote add origin git@github.com:TWOJ_USER/sw_wawrzyniec.git
+git push -u origin main
+```
+
+### 2. Włącz Pages
+
+GitHub → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+Po pierwszym pushu (albo **Actions → GitHub Pages → Run workflow**) strona będzie pod:
+
+`https://TWOJ_USER.github.io/sw_wawrzyniec/`
+
+### 3. Aktualizacje treści
+
+Wrzuć DOCX / zdjęcia do `content/`, zrób commit i push. Po 1–2 minutach GitHub przebuduje stronę. Panel `/admin` na Pages pokazuje tę instrukcję — wgrywanie plików w przeglądarce działa tylko na Dockerze.
+
+Lokalny podgląd eksportu (nie otwieraj `index.html` z dysku — bez serwera CSS się nie wczyta):
+
+```bash
+pnpm build:pages
+pnpm preview:pages
+```
+
+Strona: <http://127.0.0.1:8080/>
+
+Symulacja adresu GitHub (`/nazwa-repo`):
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/sw_wawrzyniec pnpm build:pages
+pnpm preview:pages
+```
+
+Wtedy wejdź na <http://127.0.0.1:8080/sw_wawrzyniec/>.
+
+### Własna domena (np. sw-wawrzyniec.com.pl)
+
+1. W repozytorium: **Settings → Pages → Custom domain**.
+2. **Settings → Secrets and variables → Actions → Variables**: dodaj `PAGES_BASE_PATH` = `/` (bez prefiksu `/sw_wawrzyniec`).
+3. DNS: rekord `CNAME` lub `A` zgodnie z [dokumentacją GitHub Pages](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site).
+
 ## Jak dodawać treści
 
 Pełna instrukcja: [`content/README.md`](content/README.md).

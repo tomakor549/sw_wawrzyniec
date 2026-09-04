@@ -4,6 +4,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import mammoth from "mammoth";
 import { contentPath } from "./paths";
+import { contentMediaUrl } from "./media";
 import { excerptFrom, sanitizeArticleHtml, titleFromHtml } from "./sanitize";
 
 export type ParsedDocx = {
@@ -43,7 +44,7 @@ export async function parseDocxFile(
         const buffer = Buffer.from(await image.read("base64"), "base64");
         await writeFile(path.join(mediaDir, filename), buffer);
         return {
-          src: `/api/media/${options.kind}/media/${options.slug}/${filename}`,
+          src: contentMediaUrl(options.kind, "media", options.slug, filename),
         };
       }),
     },

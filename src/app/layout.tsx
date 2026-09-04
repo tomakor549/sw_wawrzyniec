@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       locale: "pl_PL",
       type: "website",
-      images: [{ url: "/images/parafia.jpg" }],
+      images: [{ url: `${siteUrl}/images/parafia.jpg` }],
     },
   };
 }

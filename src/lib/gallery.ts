@@ -5,6 +5,7 @@ import path from "node:path";
 import yaml from "js-yaml";
 import type { Album, GalleryImage } from "@/types/content";
 import { contentPath, isSafeFilename, isSafeSlug } from "./paths";
+import { contentMediaUrl } from "./media";
 import { slugify, todayIso } from "./slug";
 
 const IMAGE_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
@@ -43,7 +44,7 @@ async function loadAlbum(slug: string): Promise<Album> {
 
   const images: GalleryImage[] = files.map((filename) => ({
     filename,
-    src: `/api/media/galeria/${slug}/${filename}`,
+    src: contentMediaUrl("galeria", slug, filename),
     alt: `${meta.title ?? slug} — ${filename}`,
   }));
 

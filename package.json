@@ -10,7 +10,10 @@
     "lint": "next lint",
     "test": "tsx --test src/lib/__tests__/slug.test.ts src/lib/__tests__/sanitize.test.ts",
     "typecheck": "tsc --noEmit",
-    "sample-docx": "python3 scripts/make_docx.py"
+    "sample-docx": "python3 scripts/make_docx.py",
+    "sync-media": "node scripts/sync-media.mjs",
+    "build:pages": "node scripts/build-pages.mjs",
+    "preview:pages": "python3 -m http.server 8080 --directory out --bind 127.0.0.1"
   },
   "packageManager": "pnpm@9.15.9",
   "engines": {

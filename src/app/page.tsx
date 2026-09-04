@@ -6,6 +6,7 @@ import { listAlbums } from "@/lib/gallery";
 import { getParish } from "@/lib/parish";
 import { formatPlDate } from "@/lib/slug";
 import { HtmlContent } from "@/components/HtmlContent";
+import { contentMediaUrl, withBasePath } from "@/lib/media";
 
 export const dynamic = "force-dynamic";
 
@@ -19,15 +20,15 @@ export default async function HomePage() {
     listAlbums(),
   ]);
   const cover = albums[0]?.cover
-    ? `/api/media/galeria/${albums[0].slug}/${albums[0].cover}`
-    : "/images/parafia.jpg";
+    ? contentMediaUrl("galeria", albums[0].slug, albums[0].cover)
+    : withBasePath("/images/parafia.jpg");
 
   return (
     <>
       <section className="relative min-h-[78vh] overflow-hidden bg-wine-deep text-cream">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/parafia.jpg"
+          src={withBasePath("/images/parafia.jpg")}
           alt="Kościół pw. św. Wawrzyńca na Wilchwach w budowie, z tęczą nad dachem"
           className="absolute inset-0 h-full w-full object-cover"
         />

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { listAlbums } from "@/lib/gallery";
+import { contentMediaUrl, withBasePath } from "@/lib/media";
 import { formatPlDate } from "@/lib/slug";
 
 export const dynamic = "force-dynamic";
@@ -21,8 +22,8 @@ export default async function GalleryPage() {
           <ul className="grid gap-6 sm:grid-cols-2">
             {albums.map((album) => {
               const cover = album.cover
-                ? `/api/media/galeria/${album.slug}/${album.cover}`
-                : "/images/parafia.jpg";
+                ? contentMediaUrl("galeria", album.slug, album.cover)
+                : withBasePath("/images/parafia.jpg");
               return (
                 <li key={album.slug}>
                   <Link href={`/galeria/${album.slug}`} className="group block overflow-hidden bg-white shadow-card">
